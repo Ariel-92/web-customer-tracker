@@ -43,7 +43,7 @@
             </tr>
 
             <tr>
-                <td><label>First name:</label></td>
+                <td><label></label></td>
                 <td><input type="submit" value="Save" class="save" /></td>
             </tr>
             </tbody>
