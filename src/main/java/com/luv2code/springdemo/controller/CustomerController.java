@@ -2,6 +2,7 @@ package com.luv2code.springdemo.controller;
 
 import com.luv2code.springdemo.dao.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,14 @@ import java.util.List;
 @RequestMapping(value = "/customer")
 public class CustomerController {
 
-    // need to inject the customer dao
+    // need to inject our customer service
     @Autowired
-    private CustomerDAO customerDAO;
+    private CustomerService customerService;
 
     @GetMapping(value = "/list")
     public String listCustomers(Model model) {
-        // get customer from te dao
-        List<Customer> customers = customerDAO.getCustomers();
+        // get customer from te service
+        List<Customer> customers = customerService.getCustomers();
 
         // add the customers to the model
         model.addAttribute("customers", customers);
